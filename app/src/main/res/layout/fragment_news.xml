@@ -9,21 +9,47 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:text="Top Stories"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_marginBottom="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_top_stories"
+        <!-- Top Stories Header -->
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:orientation="horizontal" />
+            android:layout_height="150dp"
+            android:layout_marginBottom="16dp">
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_top_stories"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="32dp"
+                android:paddingEnd="32dp"
+                android:clipToPadding="false"
+                android:overScrollMode="never" />
+
+            <!-- left botton -->
+            <Button
+                android:id="@+id/btn_prev"
+                android:text="◀"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical|start"
+                android:layout_marginStart="4dp"
+                android:background="@android:color/darker_gray"
+                android:textColor="@android:color/white"
+                android:elevation="4dp" />
+
+            <!-- right botton -->
+            <Button
+                android:id="@+id/btn_next"
+                android:text="▶"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginEnd="4dp"
+                android:background="@android:color/darker_gray"
+                android:textColor="@android:color/white"
+                android:elevation="4dp" />
+
+        </FrameLayout>
+        <!-- News Header -->
         <TextView
             android:text="News"
             android:textStyle="bold"
@@ -32,9 +58,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <!-- Vertical News List -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_news"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal" />
     </LinearLayout>
 </ScrollView>
